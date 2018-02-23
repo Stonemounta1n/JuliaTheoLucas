@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/script.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+  </head>
+  <body bgcolor="#f7d181">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/speechkitt.min.js"></script>
+  <div class="canvasLol">
+<canvas id="myCanvas" height="540" width="700" style="background: url('https://i.imgur.com/cpw7t65.jpg')">
+</canvas>
+  </div>
+    
+  <div id="titleDiv">
+    <p id="titleText">
+      Voice controlled canvas!
+    </p>
+    
+    </div>
+    
+  <div id="circleDiv">
+    <image id="circle" src="https://cdn.glitch.com/fefe1b96-6c46-49af-abba-20533caa27d2%2FUntitled-2.png?1519214259371">
+   </image>
+  </div>
+    
+  <div id="markerDiv">
+    <image id="marker" src="https://cdn.glitch.com/fefe1b96-6c46-49af-abba-20533caa27d2%2FUntitled-1.png?1519318164819"> 
+    </image>
+  </div>
+
+  <div id="textDiv">
+    <image id="textimg" src="https://cdn.glitch.com/fefe1b96-6c46-49af-abba-20533caa27d2%2Ftext.png?1519331566871"> 
+    </image>
+  </div>
+    
+    
+<script>
+                                                                                                                       
+//style="background: url('https://i.imgur.com/cpw7t65.jpg')"
+  
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+  
+var size = 20;
+  
+var xAxis = 350;
+  
+var yAxis = 270
+  
+var color = "black"
+
+var lineSize = 1;
+
+  
+  
+var lol1 = false;
+var lol2 = false;
+var lol3 = false;
+var lol4 = false;
+  
+  
+  
+var waitVar;
+  
+var markerVar;
+  
+
+function moveMarker() {
+var windowWidth = window.innerWidth; 
+var xStartpoint = windowWidth/2 - 350;
+var moveMarkerY = 77 + yAxis + "px";
+var moveMarkerX = xStartpoint + xAxis + "px";  
+document.getElementById("marker").style.top = moveMarkerY;
+document.getElementById("marker").style.left = moveMarkerX;
+}
+
+window.onload = moveMarker;
+window.onresize = moveMarker;
+  
+if (annyang) {
+  // Let's define our first command. First the text we expect, and then the function it should call
+  var commands = {
+    
+    'size 12':function(){
+    console.log('size changed');
+    size = 120;  
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 11':function(){
+    console.log('size changed');
+    size = 100;  
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 10':function(){
+    console.log('size changed');
+    size = 80;  
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 9':function(){
+    console.log('size changed');
+    size = 70;  
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 8':function(){
+    console.log('size changed');
+    size = 60;  
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 7':function(){
+    console.log('size changed');
+    size = 50;  
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 6':function(){
+    console.log('size changed');
+    size = 40; 
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 5':function(){
+    console.log('size changed');
+    size = 30;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 4':function(){
+    console.log('size changed');
+    size = 20;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 3':function(){
+    console.log('size changed');
+    size = 15;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 2':function(){
+    console.log('size changed');
+    size = 10;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'size 1':function(){
+    console.log('size changed');
+    size = 5;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'move left':function(){
+    console.log('moved left');
+    xAxis = xAxis - 100;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    markerVar = setTimeout(moveMarker, 0);
+    },
+    
+    'move right':function(){
+    console.log('moved right');
+    xAxis = xAxis + 100;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    markerVar = setTimeout(moveMarker, 0);
+    },
+    
+    'move up':function(){
+    console.log('moved up');
+    yAxis = yAxis - 100;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    markerVar = setTimeout(moveMarker, 0);
+    },
+    
+    'move down':function(){
+    console.log('moved down');
+    yAxis = yAxis + 100;
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    markerVar = setTimeout(moveMarker, 0);
+    },
+    
+    'color black':function(){
+    console.log('color changed to black');
+    color = "black"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color blue':function(){
+    console.log('color changed to blue');
+    color = "#6360fe";
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color red':function(){
+    console.log('color changed to red');
+    color = "#fe6060"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color green':function(){
+    console.log('color changed to green');
+    color = "#a6fe94"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color yellow':function(){
+    console.log('color changed to yellow');
+    color = "#fff284"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color pink':function(){
+    console.log('color changed to pink');
+    color = "#ffc9fd"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color orange':function(){
+    console.log('color changed to orange');
+    color = "#f7d181"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color purple':function(){
+    console.log('color changed to purple');
+    color = "#d3b3ff"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    'color cyan':function(){
+    console.log('color changed to cyan');
+    color = "#a1fded"
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+    },
+    
+    
+    
+    'draw circle': function() {
+      console.log('circle drawn');
+      ctx.beginPath();
+      ctx.arc(xAxis,yAxis,size,0,2*Math.PI);
+      ctx.fillStyle = color;
+      ctx.fill();
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    }, 
+    
+    'draw square': function() {
+      console.log('square drawn');
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis, size, size);
+      ctx.fillStyle = color;
+      ctx.fill();
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    }, 
+    
+
+      'line right': function() {
+      console.log('line drawn');
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis, 100, lineSize);
+      ctx.fillStyle = color;
+      ctx.fill();
+      xAxis = xAxis + 100;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+        
+    }, 
+    
+      'line left': function() {
+      console.log('line drawn');
+      ctx.beginPath();
+      ctx.rect(xAxis-100, yAxis, 100, lineSize);
+      ctx.fillStyle = color;
+      ctx.fill();
+      xAxis = xAxis - 100;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+    }, 
+    
+       'line down': function() {
+      console.log('line drawn');
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis, lineSize, 100);
+      ctx.fillStyle = color;
+      ctx.fill();
+      yAxis = yAxis + 100;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+    }, 
+    
+      'line up':function() {
+      console.log('line drawn');
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis-100, lineSize, 100);
+      ctx.fillStyle = color;
+      ctx.fill();
+      yAxis = yAxis - 100;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+    }, 
+    
+    'line size 1':function() {
+      console.log('size changed to 1px');
+      lineSize = 1;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      
+    }, 
+    
+    'line size 2':function() {
+      console.log('size changed to 5px');
+      lineSize = 5;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    }, 
+    
+    'line size 3':function() {
+      console.log('size changed to 10px');
+      lineSize = 10;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    }, 
+    
+      'line size 4':function() {
+      console.log('size changed to 10px');
+      lineSize = 15;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    }, 
+    
+      'line size 5':function() {
+      console.log('size changed to 10px');
+      lineSize = 20;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    }, 
+    
+ 
+    'restart':function() {
+      console.log('canvas cleared');
+      ctx.clearRect(0, 0, myCanvas.width,myCanvas.height);
+      xAxis = 350;
+      yAxis = 270;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+    
+    }, 
+        
+    'draw right': function expLine() {
+      console.log('drawing line');
+      lol1 = true;
+      var id = setInterval(drawing, 60);
+      function drawing(){
+      if (lol1 == true){
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis, 1, lineSize);
+      ctx.fillStyle = color;
+      ctx.fill();
+      xAxis = xAxis + 1;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+      }
+      }
+      }, 
+    
+      'draw left': function expLine() {
+      console.log('drawing line');
+      lol2 = true;
+      var id = setInterval(drawing, 60);
+      function drawing(){
+      if (lol2 == true){
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis, 1, lineSize);
+      ctx.fillStyle = color;
+      ctx.fill();
+      xAxis = xAxis - 1;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+      }
+      }
+      }, 
+    
+      'draw up': function expLine() {
+      console.log('drawing line');
+      lol3 = true;
+      var id = setInterval(drawing, 60);
+      function drawing(){
+      if (lol3 == true){
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis, lineSize, 1);
+      ctx.fillStyle = color;
+      ctx.fill();
+      yAxis = yAxis - 1;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+      }
+      }
+      }, 
+    
+      'draw down': function expLine() {
+      console.log('drawing line');
+      lol4 = true;
+      var id = setInterval(drawing, 60);
+      function drawing(){
+      if (lol4 == true){
+      ctx.beginPath();
+      ctx.rect(xAxis, yAxis, lineSize, 1);
+      ctx.fillStyle = color;
+      ctx.fill();
+      yAxis = yAxis + 1;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+      markerVar = setTimeout(moveMarker, 0);
+      }
+      }
+      }, 
+    
+    'stop': function stopLine() {
+      console.log('Stopped');
+      lol1 = false;
+      lol2 = false;
+      lol3 = false;
+      lol4 = false;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    },
+    
+      'stopp': function stopLine() {
+      console.log('Stopped');
+      lol1 = false;
+      lol2 = false;
+      lol3 = false;
+      lol4 = false;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    },
+    
+      'sto': function stopLine() {
+      console.log('Stopped');
+      lol1 = false;
+      lol2 = false;
+      lol3 = false;
+      lol4 = false;
+      document.getElementById("circle").style.opacity = "1";
+      waitVar = setTimeout(wait, 450);
+    },
+
+    
+
+  };
+  
+  
+    function wait(){
+    document.getElementById("circle").style.opacity = "0";
+    }
+  
+  
+
+
+      // Tell KITT to use annyang
+  //SpeechKITT.annyang();
+
+  // Define a stylesheet for KITT to use
+  //SpeechKITT.setStylesheet('//cdnjs.cloudflare.com/ajax/libs/SpeechKITT/0.3.0/themes/flat.css');
+
+  // Render KITT's interface
+  //SpeechKITT.vroom();
+
+  // Add our commands to annyang
+  annyang.addCommands(commands);
+
+  // Start listening.
+  annyang.start();
+}
+  
+</script>  
+  </body>
+</html>
