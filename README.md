@@ -34,3 +34,5 @@ ______________________________________________________________________
 SKETCH JULIA
 An alternative presentation method, use your voice.
 ______________________________________________________________________
+
+Theos sketch was the starting point for the demo. The demo files are in the general repository, index.html and styles.css .
