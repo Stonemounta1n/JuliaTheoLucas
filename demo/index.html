@@ -89,9 +89,34 @@ document.getElementById("marker").style.left = moveMarkerX;
 window.onload = moveMarker;
 window.onresize = moveMarker;
   
+//presets for font style and size
+ctx.font = "30px Arial";
+var font = "Arial";
+var b = "20";
+  
+  
 if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
+    
+        "font style *tag":function(c){
+    var font = c;
+    var fontsize = b + "px " + font;
+    ctx.font = fontsize;
+    console.log("Font style changed to "+c)
+    },
+    
+    "font size *tag":function(b){
+    var fontsize = b + "px" + font;
+    ctx.font = fontsize;
+    console.log("Font size changed to "+b)
+    },
+    
+    'text *tag':function(a){
+    ctx.fillStyle = color;
+    ctx.fillText(a,xAxis,yAxis);
+    console.log("Text written");
+    },
     
     'size 12':function(){
     console.log('size changed');
