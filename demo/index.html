@@ -47,6 +47,8 @@
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
   
+  
+//preset values for cursor position, size of shapes, size of lines and color
 var size = 20;
   
 var xAxis = 350;
@@ -58,25 +60,29 @@ var color = "black"
 var lineSize = 1;
 
   
-  
+//preset values for growing lines  
 var lol1 = false;
 var lol2 = false;
 var lol3 = false;
 var lol4 = false;
   
   
-  
+//variables for setTimeout()  
 var waitVar;
   
 var markerVar;
   
+ 
+//preset value for drawing triangles 
 var triSizeC = 100;
   
+//pythagoras theorem
 var triA = triSizeC/2;
     
 var triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
   
 
+//function for moving the marker to cursor position
 function moveMarker() {
 var windowWidth = window.innerWidth; 
 var xStartpoint = windowWidth/2 - 350;
@@ -99,7 +105,7 @@ if (annyang) {
   // Let's define our first command. First the text we expect, and then the function it should call
   var commands = {
     
-        "font style *tag":function(c){
+    "font style *tag":function(c){
     var font = c;
     var fontsize = b + "px " + font;
     ctx.font = fontsize;
