@@ -10,3 +10,14 @@
 - Index, presentation1, presentation2, presentation3 are different pages of your presentation. 
 
 - Change the CSS according to your demands.
+
+<b>Example of a command</b>
+    
+		'first page': function() {
+			console.log('index');
+			var utterance = new SpeechSynthesisUtterance('first page');
+			window.speechSynthesis.speak(utterance);
+			document.location.href = 'index.html';
+		},
+     
+
