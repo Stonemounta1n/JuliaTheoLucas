@@ -557,7 +557,32 @@ if (annyang) {
   document.getElementById("myCanvas").style.background = "url('https://img1.etsystatic.com/131/0/12577450/il_570xN.929889501_5rir.jpg')";
   
 
-   }
+   },
+    
+     
+   //RANDOM BACKGROUND IMAGE
+
+  'random': function random() {
+  console.log('random');
+    
+ var images = [ 
+ 'http://ksassets.timeincuk.net/wp/uploads/sites/55/2018/01/Grumpy-Cat-920x584.jpg', 
+ 'https://vignette.wikia.nocookie.net/battlefordreamisland/images/a/ae/Bananas.png/revision/latest?cb=20170825134007',
+ 'http://img08.deviantart.net/be05/i/2013/236/0/e/green_nature_png_file__use_freely_by_theartist100-d6jjatb.png',
+ 'https://3c1703fe8d.site.internapcdn.net/newman/gfx/news/hires/2014/1-earth.jpg',
+  'https://petapixel.com/assets/uploads/2017/11/transit-800x640.jpg',
+   'https://uvmbored.com/wp-content/uploads/2017/01/o13vffkurigjlahnbtwp.jpg',
+   'https://18670-presscdn-pagely.netdna-ssl.com/wp-content/uploads/10-Best-Halloween-Candy-Experiments.jpg',
+   
+ ];
+
+var random = images[Math.floor(Math.random() * images.length)];
+    
+  document.getElementById("myCanvas").style.background = "url(" +  random + ")";
+  console.log('random working');
+
+  }
+  
 
   };
   
