@@ -3,6 +3,8 @@
 
 Demo example https://lyrical-oak.glitch.me/
 
+Demo video available in the demo folder.
+
 <h3>Use following commands to draw.</h3>
 Say <i>"background"</i> following one of the commands below to change background image:
     
