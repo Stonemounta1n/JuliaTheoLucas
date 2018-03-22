@@ -1,9 +1,15 @@
 # JuliaTheoLucas
 
-API SPEECH RECOCNITION USING ANNYANG
+<h1>API SPEECH RECOCNITION USING ANNYANG</h1>
 
 In this library you have the chance to use ANNYANG SPEECH RECOGNITION to draw.
-_____________________________________________________________________
+
+<h3>Prerequisites</h3>
+1) To get started you need to download the sketch/demo you want to explore. The API is provided within the HTML code.
+No install necessary.
+2) Instruction about every individual sketch will be found in every individual folder.
+
+
 
 Demo example https://lyrical-oak.glitch.me/
 
