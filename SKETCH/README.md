@@ -1,8 +1,8 @@
 
-USE ANNYANG, SPEECH RECOGNITION FOR PRESENTATIONS.
+<h1>USE ANNYANG, SPEECH RECOGNITION FOR PRESENTATIONS.</h1>
 
 
-The idea of an alternative presentation method! 
+<h3>The idea of an alternative presentation method! </h3>
 
 
 - Commands.js control the different commands. Only your imagination set the limits!
