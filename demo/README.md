@@ -6,14 +6,14 @@ Demo example https://lyrical-oak.glitch.me/
 <h3>Use following commands to draw.</h3>
 Say <i>"background"</i> following one of the commands below to change background image:
     
-   <i> blue
-    pink
-    red
-    sky
-    grass
-    space
-    sunset
-    mountain
+   <i> blue <br>
+    pink <br>
+    red <br>
+    sky <br>
+    grass <br>
+    space <br>
+    sunset <br>
+    mountain <br>
     pizza"</i>
   
 Say “size 1” , “size 2” … “size 12” to change size of new circles and squares
