@@ -15,6 +15,8 @@ Say <i>"background"</i> following one of the commands below to change background
     sunset <br>
     mountain <br>
     pizza"</i>
+    
+Say <i>"random</i> to get a random background image
   
 Say “size 1” , “size 2” … “size 12” to change size of new circles and squares
 
