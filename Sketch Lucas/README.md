@@ -8,6 +8,7 @@
 
 <h2>Example of a command</h2>
 
+
 'Standings': function() {
       console.log('Standings works');
       var utterance = new SpeechSynthesisUtterance('Here are the current NHL Standings, master');
