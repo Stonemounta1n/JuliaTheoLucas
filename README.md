@@ -13,7 +13,9 @@ ______________________________________________________________________
 
 <h3>SKETCH JULIA</h3>
 An alternative presentation method using voice commands.
-______________________________________________________________________
+
+_______________________________________________________________________
+
 
 <h3>SKETCH LUCAS</h3>
 Open new pages and tabs using voice commands.
