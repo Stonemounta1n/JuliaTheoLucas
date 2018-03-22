@@ -70,6 +70,12 @@ var waitVar;
   
 var markerVar;
   
+var triSizeC = 100;
+  
+var triA = triSizeC/2;
+    
+var triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
+  
 
 function moveMarker() {
 var windowWidth = window.innerWidth; 
@@ -89,49 +95,70 @@ if (annyang) {
     
     'size 12':function(){
     console.log('size changed');
-    size = 120;  
+    size = 120;
+    triSizeC = 300;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
     
     'size 11':function(){
     console.log('size changed');
-    size = 100;  
+    size = 100;
+    triSizeC = 280;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
     
     'size 10':function(){
     console.log('size changed');
-    size = 80;  
+    size = 80;
+    triSizeC = 260;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
     
     'size 9':function(){
     console.log('size changed');
-    size = 70;  
+    size = 70;
+    triSizeC = 240;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
     
     'size 8':function(){
     console.log('size changed');
-    size = 60;  
+    size = 60;
+    triSizeC = 220;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
     
     'size 7':function(){
     console.log('size changed');
-    size = 50;  
+    size = 50;
+    triSizeC = 200;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
     
     'size 6':function(){
     console.log('size changed');
-    size = 40; 
+    size = 40;
+    triSizeC = 180;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
@@ -139,6 +166,9 @@ if (annyang) {
     'size 5':function(){
     console.log('size changed');
     size = 30;
+    triSizeC = 160;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
@@ -146,6 +176,9 @@ if (annyang) {
     'size 4':function(){
     console.log('size changed');
     size = 20;
+    triSizeC = 140;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
@@ -153,6 +186,9 @@ if (annyang) {
     'size 3':function(){
     console.log('size changed');
     size = 15;
+    triSizeC = 120;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
@@ -160,6 +196,9 @@ if (annyang) {
     'size 2':function(){
     console.log('size changed');
     size = 10;
+    triSizeC = 100;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
@@ -167,6 +206,9 @@ if (annyang) {
     'size 1':function(){
     console.log('size changed');
     size = 5;
+    triSizeC = 80;
+    triA = triSizeC/2;
+    triB = Math.sqrt((triSizeC*triSizeC)-(triA*triA));
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
@@ -265,9 +307,7 @@ if (annyang) {
     document.getElementById("circle").style.opacity = "1";
     waitVar = setTimeout(wait, 450);
     },
-    
-    
-    
+       
     'draw circle': function() {
       console.log('circle drawn');
       ctx.beginPath();
@@ -277,6 +317,64 @@ if (annyang) {
       document.getElementById("circle").style.opacity = "1";
       waitVar = setTimeout(wait, 450);
     }, 
+    
+        
+    
+    'draw triangle': function() {
+    ctx.beginPath();
+    ctx.moveTo(xAxis, yAxis);
+    ctx.lineTo(xAxis+triSizeC, yAxis);
+    xAxis = xAxis + triSizeC;
+    ctx.lineTo(xAxis-triA, yAxis-triB);
+    xAxis = xAxis - triSizeC;
+    ctx.fillStyle = color;
+    ctx.fill();
+    console.log('triangle drawn');
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+  },
+    
+    'draw reverse triangle': function() {
+    console.log('reverse triangle drawn')
+    ctx.beginPath();
+    ctx.moveTo(xAxis, yAxis);
+    ctx.lineTo(xAxis+triSizeC, yAxis);
+    xAxis = xAxis + triSizeC;
+    ctx.lineTo(xAxis-triA, yAxis+triB);
+    xAxis = xAxis - triSizeC;
+    ctx.fillStyle = color;
+    ctx.fill();
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+  },
+    
+        'draw left arrow': function() {
+    console.log('left arrow drawn')
+    ctx.beginPath();
+    ctx.moveTo(xAxis, yAxis);
+    ctx.lineTo(xAxis, yAxis+30);
+    yAxis = yAxis + 30;
+    ctx.lineTo(xAxis-50, yAxis-15);
+    yAxis = yAxis - 30;
+    ctx.fillStyle = color;
+    ctx.fill();
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+  },
+    
+        'draw right arrow': function() {
+    console.log('right arrow drawn')
+    ctx.beginPath();
+    ctx.moveTo(xAxis, yAxis);
+    ctx.lineTo(xAxis, yAxis+30);
+    yAxis = yAxis + 30;
+    ctx.lineTo(xAxis+50, yAxis-15);
+    yAxis = yAxis - 30;
+    ctx.fillStyle = color;
+    ctx.fill();
+    document.getElementById("circle").style.opacity = "1";
+    waitVar = setTimeout(wait, 450);
+  },
     
     'draw square': function() {
       console.log('square drawn');
