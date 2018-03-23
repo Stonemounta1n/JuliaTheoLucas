@@ -45,7 +45,7 @@ Say “line size 1” … “line size 3” to change the thickness of new lines
 
 Say “draw right”, “draw left”, “draw up”, “draw down” to draw a growing line in that direction
 
-Say “stop” to stop it the line from growing
+Say “stop” to stop the line from growing
 
 Say “restart” to refresh the canvas
 
