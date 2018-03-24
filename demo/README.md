@@ -49,4 +49,12 @@ Say “stop” to stop the line from growing
 
 Say “restart” to refresh the canvas
 
-say "print picture" to print the page
+Say "print picture" to print the page
+
+Say "text" followed by what you want to write, to write that text
+
+Say "font size" followed by any font size, to change to that size
+
+Say "font style" followed by any font, to change to that font family
+
+
